@@ -1,0 +1,27 @@
+<ul class="menu">
+<li class="current"><a href="#staticUrl/index.htm">首页</a></li>
+<li><a href=""><span class="icon" data-icon="R" style="font-family:微软雅黑"></span>北京狐狸</a>
+	<ul>
+	<li><a href="#staticUrl/school/record"><span class="icon" data-icon="G"></span>通信录</a></li>
+	<li><a href=""><span class="icon" data-icon="A"></span>其他</a>
+		<ul>
+		<li><a href=""><span class="icon" data-icon="Z"></span>Sub Item1</a></li>
+		<li><a href=""><span class="icon" data-icon="k"></span>Sub Item2</a></li>
+		<li><a href=""><span class="icon" data-icon="J"></span>Sub Item3</a></li>
+		<li><a href=""><span class="icon" data-icon="="></span>Sub Item4</a></li>
+		</ul>
+	</li>
+	<li class="divider"><a href=""><span class="icon" data-icon="T"></span>简介</a></li>
+	</ul>
+</li>
+</ul>
+<script>
+$(function(){
+	$(".menu li").each(function(){
+		$(this).click(function(){
+			$(".current").removeClass();
+			$(this).addClass("current");
+		})
+	})
+});
+</script>

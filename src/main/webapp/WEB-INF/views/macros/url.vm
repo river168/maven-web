@@ -1,0 +1,18 @@
+#macro(bizUrl)${request.getScheme()}://${request.getServerName()}:${request.getServerPort()}${request.getContextPath()}/#end
+#macro(myUrl)${request.getScheme()}://${request.getServerName()}:${request.getServerPort()}${request.getContextPath()}/#end
+#macro(staticUrl)${request.getScheme()}://${request.getServerName()}:${request.getServerPort()}${request.getContextPath()}/#end
+#macro(serviceUrl)${service_url}#end
+
+#macro(currentLogoutUrl)
+	#if("$!{request.getQueryString()}" == "")
+		${request.getRequestURL().toString()}?request_url=signout
+	#else
+		${request.getRequestURL().toString()}?${request.getQueryString()}&request_url=signout
+	#end
+#end
+
+#macro(forJsUrl)
+<script type="text/javascript">
+	var bizUrl = "#bizUrl()", myUrl = "#myUrl()", staticUrl = "#staticUrl()", serviceUrl = "#serviceUrl()";
+</script>
+#end

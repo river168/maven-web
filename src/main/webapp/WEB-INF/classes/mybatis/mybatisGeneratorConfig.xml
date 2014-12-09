@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration   PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"   "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration><!--classPathEntry:数据库的JDBC驱动-->
+	<classPathEntry location="mysql-connector-java-5.1.27.jar" />
+	<context id="MysqlTables" targetRuntime="MyBatis3">
+		<!-- 注意这里面的顺序确定的，不能随变更改 -->
+		<!--  自定义的分页插件   <plugin type="com.deppon.foss.module.helloworld.shared.PaginationPlugin"/>   -->
+		<!-- 可选的（0 or 1） -->
+		<!-- 注释生成器 -->
+		<commentGenerator>
+		<!-- 是否去掉注释 -->
+			<property name="suppressAllComments" value="true" />
+		</commentGenerator>
+		<!-- 必须的（1 required） -->
+		<!-- 数据库连接 -->
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
+			connectionURL="jdbc:mysql://localhost:3306/mavenDb?failOverReadOnly=false&amp;autoReconnect=true&amp;characterEncoding=GBK&amp;characterSetResults=GBK" 
+			userId="root"
+			password="root">
+		</jdbcConnection>
+		<!-- 可选的（0 or 1） -->
+		<!-- 类型转换器或者加类型解析器 -->
+		<javaTypeResolver>
+			<property name="forceBigDecimals" value="false" />
+		</javaTypeResolver>
+		<!-- 必须的（1 required） --><!-- java模型生成器 -->
+		<!-- targetProject:自动生成代码的位置 -->
+		<javaModelGenerator
+			targetPackage="com.hc360.ework.dao.po"
+			targetProject="src/main/java">
+			<property name="enableSubPackages" value="true" />
+			<property name="trimStrings" value="true" />
+		</javaModelGenerator>
+		<!-- 必须的（1 required） -->
+		<!-- map xml 生成器 -->
+		<sqlMapGenerator
+			targetPackage="com.hc360.ework.dao.mapper"
+			targetProject="src/main/java">
+			<property name="enableSubPackages" value="true" />
+		</sqlMapGenerator>
+		<!-- 可选的（0 or 1） -->
+		<!-- mapper  或者就是dao接口生成器 -->
+		<javaClientGenerator type="XMLMAPPER"
+			targetPackage="com.hc360.ework.dao"
+			targetProject="src/main/java">
+			<property name="enableSubPackages" value="true" />
+			<property name="methodNameCalculator" value="extended" />
+		</javaClientGenerator>
+		<!-- 必须的（1...N） -->
+		<!-- pojo 实体生成器 -->
+		<!-- tableName:用于自动生成代码的数据库表;-->
+		<!-- domainObjectName:对应于数据库表的javaBean类名-->
+		<!-- <table tableName="taskprdct" domainObjectName="TaskPrdct"
+			enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false" selectByExampleQueryId="false">
+		</table> -->
+		<!-- table tableName="taskdevprgm" domainObjectName="TaskDevprgm"
+			enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false" selectByExampleQueryId="false">
+		</table-->
+		<table tableName="school_communication_record" domainObjectName="schoolCommunicationRecord"
+			enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false" selectByExampleQueryId="false">
+		</table>
+		
+	<!--  <table tableName="taskdba" domainObjectName="TaskDBA"
+			enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false" selectByExampleQueryId="false">
+		</table>-->
+				
+	</context>
+</generatorConfiguration>
+<!--java -jar mybatis-generator-core-1.3.1.jar -configfile mybatisGeneratorConfig.xml -overwrite-->

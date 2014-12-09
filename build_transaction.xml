@@ -1,0 +1,48 @@
+<!-- detail 工程maven配置文件 -->
+<project>
+  <!-- The POM version. This tag is currently unused. -->
+  <modelVersion>4.0.0</modelVersion>
+  <!-- A project group id. If present, the id serves as the project's
+        directory name in the repository -->
+  <groupId>com.hc360</groupId>
+  <!-- A unique project identifier. The project identifier and its
+        version number often generate file/directory names during the
+        build. For example, a project JAR file follows the
+        <id>-<version> naming convention. -->
+  <!-- A short name for the project -->
+  <name>build_ework</name>
+  <artifactId>build_ework</artifactId>
+  <!-- The project version number. Maven does not enforce a particular
+        version numbering scheme. -->
+  
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>pom</packaging>
+
+  
+  
+  
+  <!-- ###################################################################### -->
+  <!-- Project management section                                -->
+   <!-- Details of the organization holding the project. Only the name
+        is required. -->
+  <organization>
+    <name>HC360.COM</name>
+    <url>http://www.hc360.com/</url>
+  </organization>
+  <!-- (OPTIONAL) Year of inception -->
+  <inceptionYear>2000</inceptionYear>
+
+  <!-- (OPTIONAL) Project description -->
+  <description>工程构建</description>
+
+  <developers>
+    
+  </developers>
+  
+ 
+
+
+  <modules>
+     <module>../vsm</module>
+  </modules>
+</project>

@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hc360.ework.dao.SchoolCommunicationRecordMapper" >
+  <resultMap id="BaseResultMap" type="com.hc360.ework.dao.po.SchoolCommunicationRecord" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="code" property="code" jdbcType="INTEGER" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="borth_year" property="borthYear" jdbcType="VARCHAR" />
+    <result column="sex" property="sex" jdbcType="CHAR" />
+    <result column="school_major" property="schoolMajor" jdbcType="VARCHAR" />
+    <result column="phone" property="phone" jdbcType="VARCHAR" />
+    <result column="tell" property="tell" jdbcType="VARCHAR" />
+    <result column="home" property="home" jdbcType="VARCHAR" />
+    <result column="company" property="company" jdbcType="VARCHAR" />
+    <result column="industry" property="industry" jdbcType="VARCHAR" />
+    <result column="work" property="work" jdbcType="VARCHAR" />
+    <result column="ismarry" property="ismarry" jdbcType="CHAR" />
+    <result column="email" property="email" jdbcType="VARCHAR" />
+    <result column="address" property="address" jdbcType="VARCHAR" />
+    <result column="pubdate" property="pubdate" jdbcType="DATE" />
+    <result column="state" property="state" jdbcType="CHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, code, name, borth_year, sex, school_major, phone, tell, home, company, industry, 
+    work, ismarry, email, address, pubdate, state
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from school_communication_record
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from school_communication_record
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.hc360.ework.dao.po.SchoolCommunicationRecord" >
+    insert into school_communication_record (id, code, name, 
+      borth_year, sex, school_major, 
+      phone, tell, home, 
+      company, industry, work, 
+      ismarry, email, address, 
+      pubdate, state)
+    values (#{id,jdbcType=INTEGER}, #{code,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, 
+      #{borthYear,jdbcType=VARCHAR}, #{sex,jdbcType=CHAR}, #{schoolMajor,jdbcType=VARCHAR}, 
+      #{phone,jdbcType=VARCHAR}, #{tell,jdbcType=VARCHAR}, #{home,jdbcType=VARCHAR}, 
+      #{company,jdbcType=VARCHAR}, #{industry,jdbcType=VARCHAR}, #{work,jdbcType=VARCHAR}, 
+      #{ismarry,jdbcType=CHAR}, #{email,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR}, 
+      #{pubdate,jdbcType=DATE}, #{state,jdbcType=CHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.hc360.ework.dao.po.SchoolCommunicationRecord" >
+    insert into school_communication_record
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="code != null" >
+        code,
+      </if>
+      <if test="name != null" >
+        name,
+      </if>
+      <if test="borthYear != null" >
+        borth_year,
+      </if>
+      <if test="sex != null" >
+        sex,
+      </if>
+      <if test="schoolMajor != null" >
+        school_major,
+      </if>
+      <if test="phone != null" >
+        phone,
+      </if>
+      <if test="tell != null" >
+        tell,
+      </if>
+      <if test="home != null" >
+        home,
+      </if>
+      <if test="company != null" >
+        company,
+      </if>
+      <if test="industry != null" >
+        industry,
+      </if>
+      <if test="work != null" >
+        work,
+      </if>
+      <if test="ismarry != null" >
+        ismarry,
+      </if>
+      <if test="email != null" >
+        email,
+      </if>
+      <if test="address != null" >
+        address,
+      </if>
+      <if test="pubdate != null" >
+        pubdate,
+      </if>
+      <if test="state != null" >
+        state,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="code != null" >
+        #{code,jdbcType=INTEGER},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="borthYear != null" >
+        #{borthYear,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null" >
+        #{sex,jdbcType=CHAR},
+      </if>
+      <if test="schoolMajor != null" >
+        #{schoolMajor,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null" >
+        #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="tell != null" >
+        #{tell,jdbcType=VARCHAR},
+      </if>
+      <if test="home != null" >
+        #{home,jdbcType=VARCHAR},
+      </if>
+      <if test="company != null" >
+        #{company,jdbcType=VARCHAR},
+      </if>
+      <if test="industry != null" >
+        #{industry,jdbcType=VARCHAR},
+      </if>
+      <if test="work != null" >
+        #{work,jdbcType=VARCHAR},
+      </if>
+      <if test="ismarry != null" >
+        #{ismarry,jdbcType=CHAR},
+      </if>
+      <if test="email != null" >
+        #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null" >
+        #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="pubdate != null" >
+        #{pubdate,jdbcType=DATE},
+      </if>
+      <if test="state != null" >
+        #{state,jdbcType=CHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.hc360.ework.dao.po.SchoolCommunicationRecord" >
+    update school_communication_record
+    <set >
+      <if test="code != null" >
+        code = #{code,jdbcType=INTEGER},
+      </if>
+      <if test="name != null" >
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="borthYear != null" >
+        borth_year = #{borthYear,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null" >
+        sex = #{sex,jdbcType=CHAR},
+      </if>
+      <if test="schoolMajor != null" >
+        school_major = #{schoolMajor,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null" >
+        phone = #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="tell != null" >
+        tell = #{tell,jdbcType=VARCHAR},
+      </if>
+      <if test="home != null" >
+        home = #{home,jdbcType=VARCHAR},
+      </if>
+      <if test="company != null" >
+        company = #{company,jdbcType=VARCHAR},
+      </if>
+      <if test="industry != null" >
+        industry = #{industry,jdbcType=VARCHAR},
+      </if>
+      <if test="work != null" >
+        work = #{work,jdbcType=VARCHAR},
+      </if>
+      <if test="ismarry != null" >
+        ismarry = #{ismarry,jdbcType=CHAR},
+      </if>
+      <if test="email != null" >
+        email = #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null" >
+        address = #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="pubdate != null" >
+        pubdate = #{pubdate,jdbcType=DATE},
+      </if>
+      <if test="state != null" >
+        state = #{state,jdbcType=CHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.hc360.ework.dao.po.SchoolCommunicationRecord" >
+    update school_communication_record
+    set code = #{code,jdbcType=INTEGER},
+      name = #{name,jdbcType=VARCHAR},
+      borth_year = #{borthYear,jdbcType=VARCHAR},
+      sex = #{sex,jdbcType=CHAR},
+      school_major = #{schoolMajor,jdbcType=VARCHAR},
+      phone = #{phone,jdbcType=VARCHAR},
+      tell = #{tell,jdbcType=VARCHAR},
+      home = #{home,jdbcType=VARCHAR},
+      company = #{company,jdbcType=VARCHAR},
+      industry = #{industry,jdbcType=VARCHAR},
+      work = #{work,jdbcType=VARCHAR},
+      ismarry = #{ismarry,jdbcType=CHAR},
+      email = #{email,jdbcType=VARCHAR},
+      address = #{address,jdbcType=VARCHAR},
+      pubdate = #{pubdate,jdbcType=DATE},
+      state = #{state,jdbcType=CHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="getSchoolList" parameterType="com.hc360.ework.dao.po.SchoolCommunicationRecord" resultMap="BaseResultMap" >
+      select * from school_communication_record where state='1'
+  </select>
+  <update id="delRecordBystates" parameterType="java.lang.Integer">
+      update school_communication_record set state='0'where id=#{id}
+  </update>
+  <select id="validatePhone" resultType="java.lang.Integer">
+     select count(1) from  school_communication_record where id=#{id} and phone=#{phone}
+  </select>
+</mapper>
