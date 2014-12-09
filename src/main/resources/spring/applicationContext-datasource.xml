@@ -66,15 +66,24 @@
 	
 	<!--生产环境数据源配置 -->   
 	<beans profile="production">
-		<bean id="dataSource" class="org.springframework.jndi.JndiObjectFactoryBean"> 
-			<property name="jndiName" value="java:comp/env/eworkdb" /> 
+		<!-- 数据源配置方式1:导入JDBC属性文件 -->
+		<context:property-placeholder location="classpath:jdbc.properties" />
+		
+		<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+			<property name="driverClassName" value="${jdbc.driverClassName}" />
+			<property name="url" value="${jdbc.url}" />
+			<property name="username" value="${jdbc.username}" />
+			<property name="password" value="${jdbc.password}" />
+			<property name="maxActive" value="${jdbc.maxActive}" />
+			<property name="maxIdle" value="${jdbc.maxIdle}" />
+			<property name="maxWait" value="${jdbc.maxWait}" />
 		</bean>
 	</beans>
 
 	<!--开发环境数据源配置 -->
 	<beans profile="dev,test">
 		<!-- 数据源配置方式1:导入JDBC属性文件 -->
-		<context:property-placeholder location="classpath:jdbc.properties" />
+		<context:property-placeholder location="classpath:jdbc_dev.properties" />
 		
 		<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
 			<property name="driverClassName" value="${jdbc.driverClassName}" />

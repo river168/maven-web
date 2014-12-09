@@ -91,6 +91,6 @@
 	</resource-ref>
 	
 	<welcome-file-list>
-		<welcome-file></welcome-file>
+		<welcome-file>maven-web/index.htm</welcome-file>
 	</welcome-file-list>
 </web-app>
