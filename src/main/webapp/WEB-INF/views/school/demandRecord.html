@@ -1,0 +1,233 @@
+#set($ctx = $rc.contextPath)
+<link href="$ctx/css/projectmanage/table.css" rel="stylesheet" />
+<link href="$ctx/css/projectmanage/flick/jquery-ui.min.css" rel="stylesheet" />
+<link href="$ctx/css/projectmanage/flick/jquery.ui.theme.css" rel="stylesheet" />
+<link href="$ctx/css/projectmanage/jquery.acutocomplete.css" rel="stylesheet" />
+	<script type="text/javascript"	src="$ctx/js/My97DatePicker/WdatePicker.js"></script>
+	<link type="text/css" href="$ctx/css/mission/fg.menu.css" media="screen" rel="stylesheet" />
+<link type="text/css" href="$ctx/css/mission/fg.css" media="screen" rel="stylesheet" />
+<script type="text/javascript" src="$ctx/js/projectmanage/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="$ctx/js/projectmanage/jquery-ui.min.js"></script>
+<script type="text/javascript" src="$ctx/js/mission/operation/fg.menu.js"></script>
+<script type="text/javascript" src="$ctx/js/mission/operation/fg.js"></script>
+
+<script type="text/javascript" src="$ctx/js/projectmanage/jquery.autocomplete.js"></script>
+<script type="text/javascript" src="$ctx/js/demand/demandRecord.js"></script>
+
+<style>
+<!--
+.daohangtishi{background-color:#cccccc; height:25px; font-size:14px;padding-left:10px; line-height:25px;width:970px}
+-->
+</style>
+
+	<body>
+	<div style="width:980px;">
+		<div class="daohangtishi">
+					需求池：
+				</div>
+		<form id="queryfrm" action="search.htm" name="frm" method="post">
+		<input type="hidden" value="$rc.contextPath" id="ctxPath"/>
+			<div>
+				<table width="100%" border="0" cellspacing="0" cellpadding="0">
+					<tr>
+						<td>
+							<input type="hidden" name="actionType" value="0" id="actionType">
+							<input type="hidden" name="page" value="$!{pageBean.page}"
+								id="page" />
+							<input type="hidden" name="pageSize"
+								value="$!{pageBean.getPageSize()}" id="pageSize" />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<fieldset	style="border: 2px groove threedface; border-image: initial;margin: 0 0 10px 0;">
+								<table width="100%" border="0" cellspacing="0" cellpadding="0">
+									<tr align="right">
+										<td align="right">评估人</td>
+										<td align="left">
+										    <select name="assessor" id="assessor">
+											<option value="" >请选择</option>
+											#foreach($param in $empList)
+												<option value="$param.im" #if($param.im == $demandPoolInfo.assessor) selected #end>$param.nameDep</option>
+											#end
+											</select>
+										</td>
+										<td align="right" style="padding-left:30px;">计划发版时间</td>
+										<td align="left">
+											<input maxlength=10 size=10 id="demandReleasePlanStart"name="demandReleasePlanStart"value="$!{demandPoolInfo.demandReleasePlanStart}"
+										onFocus="WdatePicker({maxDate:'#F{$dp.$D(\'demandReleasePlanEnd\')}',dateFmt:'yyyy-MM-dd'})" />-<input
+										maxlength=10 size=10 id="demandReleasePlanEnd"name="demandReleasePlanEnd"value="$!{demandPoolInfo.demandReleasePlanEnd}"
+										onFocus="WdatePicker({minDate:'#F{$dp.$D(\'demandReleasePlanStart\')}',dateFmt:'yyyy-MM-dd'})" />
+									</td>
+										<td align="right">进展状态</td>
+										<td colspan="2" align="left"><select id="demandProgressState" name="demandProgressState">
+										    <option value="" >请选择</option>
+												<option value="1" #if($!demandPoolInfo.demandProgressState == '1') selected #end>需求评估</option>
+												<option value="2" #if($!demandPoolInfo.demandProgressState == '2') selected #end>需求策划</option>
+												<option value="3" #if($!demandPoolInfo.demandProgressState == '3') selected #end>开发排期</option>
+												<option value="4" #if($!demandPoolInfo.demandProgressState == '4') selected #end>开发实施</option>
+												<option value="5" #if($!demandPoolInfo.demandProgressState == '5') selected #end>发版上线</option>
+											</select>&nbsp;&nbsp;
+											需求编号<input type="text" name="demandId" style="width:100px" value="$!{demandPoolInfo.demandId}"/>
+										</td>
+										<td align="center"><input type="button" value="&nbsp; 导 &nbsp;出 &nbsp;"  id="doExport-btn"></td>
+										</tr>
+										<tr>
+										<td align="right">需求负责人</td>
+										<td>
+										<select name="demandadm" id="demandadm">
+											<option value="" >请选择</option>
+											#foreach($param in $empList)
+												<option value="$param.im" #if($param.im == $demandPoolInfo.demandadm) selected #end>$param.nameDep</option>
+											#end
+											</select>
+										<input type="hidden" value="$!{params.demandId}" id="demandId"/>
+										</td>
+										<!-- 
+										<td  align="right" style="padding-left:35px" >redmine编号 </td>
+										<td><input value="$!demandPoolInfo.demandRedmine" name="demandRedmine" id="demandRedmine" style="width:155px" maxlength="20"/></td>
+										 -->
+										<td  align="right">优先级 </td>
+										<td><input value="$!demandPoolInfo.demandPriority" name="demandPriority"  onkeyup="this.value=this.value.replace(/\D/g,'')" id="demandPriority" style="width:155px" maxlength="5"/></td>
+										<td>需求描述</td>
+										<td align="left">
+										<input id="demandDesc" name="demandDesc" value="$!{demandPoolInfo.demandDesc}"/>
+										</td>
+										<td align="center"><input type="button" value="&nbsp; 查 &nbsp;询  " id="doSearch-btn"></td>
+										<td  align="center">
+										     <button type="button"  id="newDemand-btn">新增需求</button>
+										</td>
+									</tr>
+								</table>
+							</fieldset>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<table width="100%" class="lstable" cellspacing="0">
+								<thead>
+									<tr>
+										<td width="5%" align="center">
+											需求编号
+										</td>
+										<td width="8%" align="center">
+											需求描述
+										</td>
+										<td width="8%" align="center">
+											所属业务线
+										</td>
+										<td width="8%" align="center">
+											需求责任人
+										</td>
+										<td width="10%" align="center">
+											提交排期时间
+										</td>
+										<td width="10%" align="center">
+											开发负责人
+										</td>
+										<td width="5%" align="center">
+											redmine编号
+										</td>
+										<td width="5%" align="center">
+										           优先级
+										</td>
+										<td width="10%" align="center">
+											计划发版时间
+										</td>
+										<td width="10%" align="center">
+											上线时间
+										</td>
+											<td width="8%" align="center">
+											转发版或转项目
+										</td>
+										<!-- <td width="10%" align="center">
+										<div style="width:100px">
+											项目里程碑
+											</div>
+										</td> -->
+										<td width="10%" align="center">
+											操作
+										</td>
+									</tr>
+								</thead>
+								<tbody>
+									#foreach($indexobj in $demandInfos)
+									<tr height="30px" id="$!indexobj.demandId">
+										<td align="center" id="demandNumber_v">
+											<span title="$velocityCount">$!indexobj.demandId</span>
+										</td>
+										<td align="center" id="demandDesc_v">
+										<textarea rows="" cols="22" style="height:110px" readonly>$!indexobj.demandDesc</textarea>
+										</td>
+										<td align="center" id="dplProductLine_v">
+										    #foreach($line in $!indexobj.dplProductLine)
+											$line </br>
+											#end
+										</td>
+										<td align="center" id="demandadm_v">
+											$!indexobj.rqUserS
+										</td>
+										<td align="center" id="demandScheduleDate_v">
+										    $!dateTool.format("yyyy-MM-dd",$!{indexobj.demandScheduleDate})
+										</td>
+										<td align="center" id="devadm_v">
+											$!indexobj.devadm
+										</td>
+										<td align="center" id="demandRedmine_v">
+											$!indexobj.demandRedmine
+										</td>
+										<td align="center" id="demandRedmine_v">
+											$!indexobj.demandPriority
+										</td>
+										<td align="center" id="demandReleasePlan_v">
+										$!dateTool.format("yyyy-MM-dd",$!{indexobj.demandReleasePlan})
+										</td>
+										<td align="center" id="demandComplete_v">
+										$!dateTool.format("yyyy-MM-dd",$!{indexobj.demandComplete})
+										</td>
+										<td align="center" id="toOther_v">
+										#if($!indexobj.demandReleaseId)
+										#if($!indexobj.demandReleaseType=='4')
+										已转项目
+										#else
+										已转发版
+										#end
+										#else
+										未转
+										#end
+										</td>
+										<td align="center">
+											
+											 <a tabindex="0" href="#search-engines" class="fg-button fg-button-icon-right ui-widget ui-state-default ui-corner-all" id="flat$velocityCount"><span class="ui-icon ui-icon-triangle-1-s"></span>选择</a>
+											<div id="search-engines" class="hidden">
+											    <ul>
+													<li><a href="javascript:void(0)" class="updateDemand-btn"  onclick="updateDemand('$!indexobj.demandId')" >修改</a></li>
+													<li><a href="javascript:void(0)" class="delDemand-btn"     onclick="delDemand('$!indexobj.demandId')" >删除</a></li>
+													#if(!$!indexobj.demandReleaseId)
+													<li><a href="javascript:void(0)" class="delDemand-btn"     onclick="toProject('$!indexobj.demandId')" >转项目</a></li>
+													<li><a href="javascript:void(0)" class="delDemand-btn"     onclick="toRelease('$!indexobj.demandId')" >转发版</a></li>
+													#end
+													<li><a href="javascript:void(0)" class="delDemand-btn"     onclick="toDetail('$!indexobj.demandId')" >详细页面</a></li>
+											   </ul>
+											</div>
+										</td>
+									</tr>
+									#end
+								</tbody>
+							</table>
+							#PageBarII1("frm")
+						</td>
+					</tr>
+				</table>
+			</div>
+			<input type="hidden" id="releaseID" name="releaseID" value="0" />
+			<script>
+			#foreach($indexobj in $demandInfos)
+			#set($ope=$velocityCount)
+			operation('$ope');
+			#end
+			</script>
+		</form>
+</div>
+	</body>
+	
