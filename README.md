@@ -1,0 +1,2 @@
+一个maven控制的springMVC+Mybatis+velocity的java工程；
+一个试验田
