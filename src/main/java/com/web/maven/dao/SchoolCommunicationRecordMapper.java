@@ -1,10 +1,10 @@
-package com.hc360.ework.dao;
+package com.web.maven.dao;
 
 import java.util.List;
 
 import org.apache.ibatis.annotations.Param;
 
-import com.hc360.ework.dao.po.SchoolCommunicationRecord;
+import com.web.maven.dao.po.SchoolCommunicationRecord;
 
 public interface SchoolCommunicationRecordMapper {
 	int deleteByPrimaryKey(Integer id);

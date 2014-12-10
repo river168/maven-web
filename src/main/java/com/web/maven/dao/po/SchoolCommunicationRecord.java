@@ -1,4 +1,4 @@
-package com.hc360.ework.dao.po;
+package com.web.maven.dao.po;
 
 import java.util.Date;
 

@@ -1,4 +1,4 @@
-package com.hc360.ework.web.controller;
+package com.web.maven.web.controller;
 
 import javax.servlet.http.HttpServletRequest;
 

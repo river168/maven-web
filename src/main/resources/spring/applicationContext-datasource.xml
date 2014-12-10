@@ -26,7 +26,7 @@
 		<property name="dataSource" ref="dataSource" />
 		<property name="mapperLocations">
 			<list>
-				<value>classpath:com/hc360/ework/dao/mapper/*Mapper.xml</value>
+				<value>classpath:com/web/maven/dao/mapper/*Mapper.xml</value>
 			</list>
 		</property>
 	</bean>
@@ -49,7 +49,7 @@
 	<!-- 声明切入点 -->
 	<aop:config>
 		<aop:pointcut id="loginPointCuts"
-			expression="execution(* com.hc360.ework.service.*.*(..))" />
+			expression="execution(* com.web.maven.service.*.*(..))" />
 			
 		<aop:advisor advice-ref="txAdvice" pointcut-ref="loginPointCuts" />
 	</aop:config>
@@ -58,7 +58,7 @@
 
 	<!-- 通过扫描的模式,自动注入bean -->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-		<property name="basePackage" value="com.hc360.ework.dao" />
+		<property name="basePackage" value="com.web.maven.dao" />
 		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" /> 
 	</bean>
 	

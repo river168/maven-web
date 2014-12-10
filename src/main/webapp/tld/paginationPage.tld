@@ -13,7 +13,7 @@
 
 	<tag>
 		<name>pagination</name>
-		<tag-class>com.hc360.ework.web.taglibs.PaginationPageTag</tag-class>
+		<tag-class>com.web.maven.web.taglibs.PaginationPageTag</tag-class>
 		<body-content>htm</body-content>
 
 		<attribute>

@@ -1,8 +1,8 @@
-package com.hc360.ework.service;
+package com.web.maven.service;
 
 import java.util.List;
 
-import com.hc360.ework.dao.po.SchoolCommunicationRecord;
+import com.web.maven.dao.po.SchoolCommunicationRecord;
 
 /**
  * 学校信息接口类

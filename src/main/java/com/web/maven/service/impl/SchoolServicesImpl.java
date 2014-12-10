@@ -1,13 +1,13 @@
-package com.hc360.ework.service.impl;
+package com.web.maven.service.impl;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.hc360.ework.dao.SchoolCommunicationRecordMapper;
-import com.hc360.ework.dao.po.SchoolCommunicationRecord;
-import com.hc360.ework.service.SchoolServices;
+import com.web.maven.dao.SchoolCommunicationRecordMapper;
+import com.web.maven.dao.po.SchoolCommunicationRecord;
+import com.web.maven.service.SchoolServices;
 
 /**
  * 学校信息实现类

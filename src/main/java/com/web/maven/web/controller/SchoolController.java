@@ -1,4 +1,4 @@
-package com.hc360.ework.web.controller;
+package com.web.maven.web.controller;
 
 import java.util.Date;
 import java.util.List;
@@ -15,8 +15,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.hc360.ework.dao.po.SchoolCommunicationRecord;
-import com.hc360.ework.service.SchoolServices;
+import com.web.maven.dao.po.SchoolCommunicationRecord;
+import com.web.maven.service.SchoolServices;
 
 @Controller
 @RequestMapping("/school")

@@ -2,7 +2,7 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.hc360</groupId>
+  <groupId>web.maven</groupId>
   <artifactId>maven-web</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>war</packaging>
@@ -358,10 +358,10 @@
 							<goal>copy-resources</goal>
 						</goals>
 						<configuration>
-							<outputDirectory>${project.basedir}/src/main/webapp/WEB-INF/classes/com/hc360/ework/dao/mapper</outputDirectory>
+							<outputDirectory>${project.basedir}/src/main/webapp/WEB-INF/classes/com/web/maven/dao/mapper</outputDirectory>
 							<resources>
 								<resource>
-									<directory>${basedir}/src/main/java/com/hc360/ework/dao/mapper</directory>
+									<directory>${basedir}/src/main/java/com/web/maven/dao/mapper</directory>
 									<includes>
 										<include>*.xml</include>
 									</includes>

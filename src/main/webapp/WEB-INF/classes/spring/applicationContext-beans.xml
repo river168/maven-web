@@ -16,6 +16,6 @@
 		注解探测器(当在service的实现类上加@service时用):此配置项不但启用了对类包进
 		行扫描以实施注释驱动Bean定义的功能,同时还启用了注释驱动自动注入的功能
 	-->
-	<context:component-scan base-package="com.hc360.ework.service" />
+	<context:component-scan base-package="com.web.maven.service" />
     <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver"/>  
 </beans>
