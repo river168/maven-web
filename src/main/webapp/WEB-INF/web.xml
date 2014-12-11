@@ -13,7 +13,7 @@
 	<!-- 	默认的 spring profile -->
 	<context-param>
 	     <param-name>spring.profiles.default</param-name>
-	     <param-value>dev</param-value>
+	     <param-value>deva</param-value>
 	</context-param>
 	
 
