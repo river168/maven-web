@@ -1,0 +1,5 @@
+#macro(barMenu $menuName)
+<script type="text/javascript">
+   $($menuName).addClass("current");
+</script>
+#end

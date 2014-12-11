@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.web.maven.common.pages.PageBean;
 import com.web.maven.dao.po.SchoolCommunicationRecord;
 import com.web.maven.service.SchoolServices;
 
@@ -34,13 +35,17 @@ public class SchoolController {
 	 * @since 2014年12月7日 下午6:55:32
 	 */
 	@RequestMapping("/record")
-	public String getSchoolRecord(ModelMap map, SchoolCommunicationRecord vo) {
+	public String getSchoolRecord(ModelMap map, SchoolCommunicationRecord vo,PageBean pageBean) {
 		List<SchoolCommunicationRecord> list = null;
 		try {
-			list = schoolServices.getSchoolRecordList(vo);
+			if(pageBean==null){
+				pageBean=new PageBean();
+			}
+			list = schoolServices.getSchoolRecordList(pageBean,vo);
 		} catch (Exception e) {
 			log.error("打开通讯录页面失败，" + e);
 		}
+		map.put("pageBean", pageBean);
 		map.put("recordList", list);
 		return "school/record";
 	}

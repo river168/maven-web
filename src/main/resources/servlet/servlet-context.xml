@@ -17,7 +17,7 @@
 
 	<!-- 静态资源映射目录 -->
 	<mvc:resources mapping="/resources/**" location="/resources/" />
-
+    <mvc:view-controller path="/" view-name="index" />
 	
 	<!-- 加载Velocity属性文件和资源路径. -->
 	<bean id="velocityConfig"

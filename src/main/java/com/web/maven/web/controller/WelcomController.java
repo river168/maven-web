@@ -16,7 +16,7 @@ public class WelcomController {
 	 * @return
 	 * @return String
 	 */
-	@RequestMapping("/index.htm")
+	@RequestMapping("/index")
    public String index(HttpServletRequest request){
 	   return "index";
    }

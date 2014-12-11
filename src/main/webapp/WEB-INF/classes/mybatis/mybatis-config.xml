@@ -5,5 +5,10 @@
 
 <configuration>
 	
-
+<plugins>
+		<!-- 分页插件 -->
+		<plugin	interceptor="com.web.maven.common.pageplugin.MysqlPagingStatementHandlerInterceptor">
+			<property name="pageSqlId" value=".*PageList.*" />
+		</plugin>
+	</plugins>
 </configuration>

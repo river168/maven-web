@@ -2,8 +2,9 @@
 <html>
 <head>
 <title>主页</title>
-<meta http-equiv="Content-Type" content="text/html; charset=GBK" />  
+<meta http-equiv="Content-Type" content="text/html; charset=GBK" />
 <script src="#staticUrl/js/school/record.js"></script>
+#barMenu("recordBar")
 <script>
 #if($!flag)
 	#if($!flag=='ok')
@@ -15,65 +16,70 @@
 </script>
 </head>
 <body>
-<div class="col_12"style="background:#fff">
-   <ul class="breadcrumbs alt1 col_6">
-	<li><a href="#staticUrl/index.htm">Home</a></li>
-	<li><a href="">北京狐狸</a></li>
-	<li><a href="">通信录</a></li>
-	</ul>
-	 <div class=" col_6">
-	 <button  id="addRecord"class="tooltip medium blue pill"  style="margin-top: 5px;float: right;">新增</button>
-	 </div>
-	<div class="col_12 ">
-		<!-- Table -->
-		<table cellspacing="0" cellpadding="0"  class="striped tight sortable alt">
-			<thead>
-				<tr>
-					<th width="5%">编号</th>
-					<th width="6%">姓名</th>
-					<th width="6%">出生年</th>
-					<th width="5%">性别</th>
-					<th>院系</th>
-					<!-- <th>手机</th> 
+	<div class="col_12" style="background: #fff">
+		<ul class="breadcrumbs alt1 col_6">
+			<li><a href="#staticUrl/index.htm">Home</a></li>
+			<li><a href="">北京狐狸</a></li>
+			<li><a href="">通信录</a></li>
+		</ul>
+		<div class=" col_6">
+			<button id="addRecord" class="tooltip medium blue pill" style="margin-top: 5px; float: right;">新增</button>
+		</div>
+		<div class="col_12 ">
+		<form action="record" name="frm" method="get">
+			<input type="hidden" name="actionType" value="0" id="actionType">
+            <input type="hidden" name="page" value="$!{pageBean.page}" id="page" /> 
+			<input type="hidden" name="pageSize"  value="$!{pageBean.getPageSize()}" id="pageSize" />
+			<!-- Table -->
+			<table cellspacing="0" cellpadding="0" class="striped tight sortable alt">
+				<thead>
+					<tr>
+						<th width="5%">编号</th>
+						<th width="6%">姓名</th>
+						<th width="6%">出生年</th>
+						<th width="5%">性别</th>
+						<th width="10">院系</th>
+						<!-- <th>手机</th> 
 					<th>固话</th>
 					<th width="8%">祖籍</th>
 					<!-- <th>工作单位</th> -->
-					<th>行业或领域</th>
-					<th>专业或岗位</th>
-					<!-- <th width="5%">婚否</th> -->
-					<th>电子邮箱</th>
-					<th  width="10%">居住区域</th>
-					<th >操作</th>
-				</tr>
-			</thead>
-			<tbody>
-			#foreach($obj in $recordList)  
-				<tr>
-					<td>$!obj.id</td>
-					<td>$!obj.name</td>
-					<td>$!obj.borthYear</td>
-					<td>#if($!obj.sex=='1')男#else 女 #end</td>
-					<td>$!obj.schoolMajor</td>
-					<!-- <td>$!obj.phone</td>
+						<th width="18%">行业或领域</th>
+						<th width="18%">专业或岗位</th>
+						<!-- <th width="5%">婚否</th> -->
+						<th width="12%">电子邮箱</th>
+						<th width="10%">居住区域</th>
+						<th width="10%">操作</th>
+					</tr>
+				</thead>
+				<tbody>
+					#foreach($obj in $recordList)
+					<tr>
+						<td>$!obj.id</td>
+						<td>$!obj.name</td>
+						<td>$!obj.borthYear</td>
+						<td>#if($!obj.sex=='1')男#else 女 #end</td>
+						<td>$!obj.schoolMajor</td>
+						<!-- <td>$!obj.phone</td>
 					<td>$!obj.tell</td>
 					<td>$!obj.home</td>
 					<!-- <td>$!obj.company</td> -->
-					<td>$!obj.industry</td>
-					<td>$!obj.work</td>
-					<!-- <td>#if($!obj.ismarry=='0')否 #elseif($!obj.ismarry=='1') 已婚 #else 已婚已育 #end</td> -->
-					<td>$!obj.email</td>
-					<td>$!obj.address</td>
-					<td><a href="javascript:validate($!obj.id,'1')"><i class="icon-pencil"></i></a> 
-		            <a href="javascript:validate($!obj.id,'0')"><i class="icon-minus-sign"></i></a></td>
-				</tr>
-			#end
-			</tbody>
-		</table>
+						<td>$!obj.industry</td>
+						<td>$!obj.work</td>
+						<!-- <td>#if($!obj.ismarry=='0')否 #elseif($!obj.ismarry=='1') 已婚 #else 已婚已育 #end</td> -->
+						<td>$!obj.email</td>
+						<td>$!obj.address</td>
+						<td><a href="javascript:validate($!obj.id,'1')"><i class="icon-pencil"></i></a> <a href="javascript:validate($!obj.id,'0')"><i class="icon-minus-sign"></i></a></td>
+					</tr>
+					#end
+				</tbody>
+			</table>
+			</form>
+			#PageBarII1("frm")
+		</div>
 	</div>
-	</div>
-	<div id="editRecordDiv" class="hide center" >
-	<form id="recordFrm" method="post">
-	<input type="hidden" name="id"/>
+	<div id="editRecordDiv" class="hide center">
+		<form id="recordFrm" method="post">
+			<input type="hidden" name="id" />
 			<table class="center">
 				<tr>
 					<td class="right">姓名</td>
@@ -123,10 +129,13 @@
 			</table>
 		</form>
 	</div>
-	<div id="validatePhoneDiv" class="hide center" >
-	<table>
-	<tr><td>电话号码</td><td><input  type="text" id='vphone'/></td></tr>
-	</table>
+	<div id="validatePhoneDiv" class="hide center">
+		<table>
+			<tr>
+				<td>电话号码</td>
+				<td><input type="text" id='vphone' /></td>
+			</tr>
+		</table>
 	</div>
 </body>
 </html>

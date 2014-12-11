@@ -231,7 +231,7 @@
       state = #{state,jdbcType=CHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <select id="getSchoolList" parameterType="com.web.maven.dao.po.SchoolCommunicationRecord" resultMap="BaseResultMap" >
+  <select id="getSchoolPageList"  resultMap="BaseResultMap" >
       select * from school_communication_record where state='1'
   </select>
   <update id="delRecordBystates" parameterType="java.lang.Integer">

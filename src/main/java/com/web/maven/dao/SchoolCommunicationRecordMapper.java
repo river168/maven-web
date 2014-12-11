@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Param;
 
+import com.web.maven.common.pages.PageBean;
 import com.web.maven.dao.po.SchoolCommunicationRecord;
 
 public interface SchoolCommunicationRecordMapper {
@@ -27,7 +28,7 @@ public interface SchoolCommunicationRecordMapper {
 	 * @version 1.0
 	 * @since 2014年12月7日 下午8:00:24
 	 */
-	List<SchoolCommunicationRecord> getSchoolList(SchoolCommunicationRecord vo);
+	List<SchoolCommunicationRecord> getSchoolPageList(@Param("pageBean")PageBean PageBean,@Param("vo") SchoolCommunicationRecord vo);
 
 	/**
 	 * 

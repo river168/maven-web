@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.web.maven.common.pages.PageBean;
 import com.web.maven.dao.SchoolCommunicationRecordMapper;
 import com.web.maven.dao.po.SchoolCommunicationRecord;
 import com.web.maven.service.SchoolServices;
@@ -20,9 +21,8 @@ public class SchoolServicesImpl implements SchoolServices {
 	@Autowired
 	private SchoolCommunicationRecordMapper schoolDao;
 
-	public List<SchoolCommunicationRecord> getSchoolRecordList(
-			SchoolCommunicationRecord vo) throws Exception {
-		return schoolDao.getSchoolList(vo);
+	public List<SchoolCommunicationRecord> getSchoolRecordList(PageBean PageBean,SchoolCommunicationRecord vo) throws Exception {
+		return schoolDao.getSchoolPageList(PageBean,vo);
 	}
 
 	public SchoolCommunicationRecord getSchoolRecord(int id) throws Exception {

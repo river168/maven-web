@@ -2,6 +2,7 @@ package com.web.maven.service;
 
 import java.util.List;
 
+import com.web.maven.common.pages.PageBean;
 import com.web.maven.dao.po.SchoolCommunicationRecord;
 
 /**
@@ -19,7 +20,7 @@ public interface SchoolServices {
 	* @version 1.0  
 	* @since 2014年12月7日 下午8:02:50  
 	*/ 
-	public List<SchoolCommunicationRecord> getSchoolRecordList(SchoolCommunicationRecord vo) throws Exception;
+	public List<SchoolCommunicationRecord> getSchoolRecordList(PageBean PageBean,SchoolCommunicationRecord vo) throws Exception;
 	
 	/**  
 	*   
