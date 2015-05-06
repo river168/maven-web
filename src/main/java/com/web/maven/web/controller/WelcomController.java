@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class WelcomController {
 	/** 
-	 * 首页地址
+	 * 首页地址 ---------
 	 * @author hejiang
 	 * @version 1.0
 	 * @date 2014年11月14日 下午6:12:48
