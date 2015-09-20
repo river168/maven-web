@@ -1,51 +1,51 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
 
-  <groupId>web.maven</groupId>
-  <artifactId>maven-web</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  <packaging>war</packaging>
+	<groupId>web.maven</groupId>
+	<artifactId>maven-web</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
 
-  <name>mavenweb</name>
-  <url>http://maven.apache.org</url>
+	<name>mavenweb</name>
+	<url>http://maven.apache.org</url>
 
-  <properties>
-    <jdk.version>1.7</jdk.version>
-    <project.build.sourceEncoding>GBK</project.build.sourceEncoding>
-    <org.springframework.version>3.1.1.RELEASE</org.springframework.version>
-	<mybatis.version>3.2.0</mybatis.version>
-	<velocity.version>1.7</velocity.version>
-	<velocity.tools.version>2.0</velocity.tools.version>
-	
-	<jdbc.driver.groupId>mysql</jdbc.driver.groupId>
-	<jdbc.driver.artifactId>mysql-connector-java</jdbc.driver.artifactId>
-	<jdbc.driver.version>5.1.27</jdbc.driver.version>
-  </properties>
+	<properties>
+		<jdk.version>1.7</jdk.version>
+		<project.build.sourceEncoding>GBK</project.build.sourceEncoding>
+		<org.springframework.version>3.1.1.RELEASE</org.springframework.version>
+		<mybatis.version>3.2.0</mybatis.version>
+		<velocity.version>1.7</velocity.version>
+		<velocity.tools.version>2.0</velocity.tools.version>
 
-   <dependencies>
-   <!-- javax.mail begin -->
-   <dependency>
-		  <groupId>javax.mail</groupId>
-		  <artifactId>mail</artifactId>
-		  <version>1.4.5</version>
-   </dependency> 
+		<jdbc.driver.groupId>mysql</jdbc.driver.groupId>
+		<jdbc.driver.artifactId>mysql-connector-java</jdbc.driver.artifactId>
+		<jdbc.driver.version>5.1.27</jdbc.driver.version>
+	</properties>
 
-    <dependency>
-      <groupId>javax.servlet</groupId>
-      <artifactId>servlet-api</artifactId>
-      <version>2.5</version>
-      <scope>provided</scope>
-    </dependency>
-	<!-- jdbc driver -->
-	<dependency>
-		<groupId>${jdbc.driver.groupId}</groupId>
-		<artifactId>${jdbc.driver.artifactId}</artifactId>
-		<version>${jdbc.driver.version}</version>
-		<scope>compile</scope>
-	</dependency>
-		
-		
+	<dependencies>
+		<!-- javax.mail begin -->
+		<dependency>
+			<groupId>javax.mail</groupId>
+			<artifactId>mail</artifactId>
+			<version>1.4.5</version>
+		</dependency>
+
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+			<version>2.5</version>
+			<scope>provided</scope>
+		</dependency>
+		<!-- jdbc driver -->
+		<dependency>
+			<groupId>${jdbc.driver.groupId}</groupId>
+			<artifactId>${jdbc.driver.artifactId}</artifactId>
+			<version>${jdbc.driver.version}</version>
+			<scope>compile</scope>
+		</dependency>
+
+
 		<dependency>
 			<groupId>org.apache.geronimo.specs</groupId>
 			<artifactId>geronimo-jms_1.1_spec</artifactId>
@@ -57,8 +57,8 @@
 			<artifactId>geronimo-j2ee-management_1.1_spec</artifactId>
 			<version>1.0.1</version>
 		</dependency>
-		
-		
+
+
 		<dependency>
 			<groupId>axis</groupId>
 			<artifactId>axis</artifactId>
@@ -70,263 +70,263 @@
 			<artifactId>axis-ant</artifactId>
 			<version>1.2.1</version>
 		</dependency>
-		
+
 		<dependency>
-	      <groupId>commons-codec</groupId>
-	      <artifactId>commons-codec</artifactId>
-	      <version>1.5</version>
-	    </dependency>
-	    
-		
-
-    
-    <!--     apache commons -->
-    <dependency>
-      <groupId>commons-dbcp</groupId>
-      <artifactId>commons-dbcp</artifactId>
-      <version>1.4</version>
-    </dependency>
-    <dependency>
-      <groupId>commons-pool</groupId>
-      <artifactId>commons-pool</artifactId>
-      <version>1.5.5</version>
-    </dependency>
-	
-	<dependency>
-		<groupId>commons-io</groupId>
-		<artifactId>commons-io</artifactId>
-		<version>2.4</version>
-	</dependency>
-            
+			<groupId>commons-codec</groupId>
+			<artifactId>commons-codec</artifactId>
+			<version>1.5</version>
+		</dependency>
 
 
-	 <!--Jsp lib -->
-	<dependency>
-		<groupId>javax.servlet</groupId>
-		<artifactId>jsp-api</artifactId>
-		<version>2.0</version>
-		<scope>provided</scope>
-	</dependency>
-    
-    
-	
-	<!--     spring -->
-    <dependency>
-      <groupId>org.springframework</groupId>
-      <artifactId>spring-beans</artifactId>
-      <version>${org.springframework.version}</version>
-    </dependency>
-    <dependency>
-		<groupId>cglib</groupId>
-		<artifactId>cglib-nodep</artifactId>
-		<version>3.1</version>
-	</dependency>
-    
-    <dependency>
-      <groupId>org.springframework</groupId>
-      <artifactId>spring-jdbc</artifactId>
-      <version>${org.springframework.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.springframework</groupId>
-      <artifactId>spring-web</artifactId>
-      <version>${org.springframework.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.springframework</groupId>
-      <artifactId>spring-webmvc</artifactId>
-      <version>${org.springframework.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.springframework</groupId>
-      <artifactId>spring-orm</artifactId>
-      <version>${org.springframework.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.springframework</groupId>
-      <artifactId>spring-tx</artifactId>
-      <version>${org.springframework.version}</version>
-    </dependency>
-    
-	<!--     aspectj -->
- <dependency>
-	<groupId>org.aspectj</groupId>
-	<artifactId>aspectjweaver</artifactId>
-	<version>1.7.2</version>
-</dependency>
-    
-	<!--     mybatis -->
-	<!--     自动生成mapper -->
-	<dependency>
-      <groupId>org.mybatis.generator</groupId>
-      <artifactId>mybatis-generator-core</artifactId>
-      <version>1.3.1</version>
-    </dependency>
-    
-	<dependency>
-		<groupId>org.mybatis</groupId>
-		<artifactId>mybatis</artifactId>
-		<version>${mybatis.version}</version>
-	</dependency>
 
-	<dependency>
-		<groupId>commons-fileupload</groupId>
-		<artifactId>commons-fileupload</artifactId>
-		<version>1.3</version>
-	</dependency>
 
-	<!-- 	mybatis-spring -->
-	<dependency>
-		<groupId>org.mybatis</groupId>
-		<artifactId>mybatis-spring</artifactId>
-		<version>1.2.0</version>
-	</dependency>
-	
-	
-	<!-- 	slf4j ,log4j -->
-	<dependency>
-		<groupId>org.slf4j</groupId>
-		<artifactId>slf4j-api</artifactId>
-		<version>1.6.4</version>
-	</dependency>
-	<dependency>
-		<groupId>org.slf4j</groupId>
-		<artifactId>slf4j-log4j12</artifactId>
-		<version>1.6.4</version>
-	</dependency>
-	
-	<dependency>
-		<groupId>log4j</groupId>
-		<artifactId>log4j</artifactId>
-		<version>1.2.16</version>
-	</dependency>
-	
-	<!-- 	hibernate validator -->
-	<dependency>
-		<groupId>org.hibernate</groupId>
-		<artifactId>hibernate-validator</artifactId>
-		<version>5.0.0.Alpha1</version>
-	</dependency>
-	
-	<!-- velocity -->
-	<dependency>
-		<groupId>org.apache.velocity</groupId>
-		<artifactId>velocity</artifactId>
-		<version>${velocity.version}</version>
-	</dependency>
-	
-	<dependency>
-		<groupId>org.apache.velocity</groupId>
-		<artifactId>velocity-tools</artifactId>
-		<version>${velocity.tools.version}</version>
-	</dependency>
+		<!-- apache commons -->
+		<dependency>
+			<groupId>commons-dbcp</groupId>
+			<artifactId>commons-dbcp</artifactId>
+			<version>1.4</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-pool</groupId>
+			<artifactId>commons-pool</artifactId>
+			<version>1.5.5</version>
+		</dependency>
 
-	<!-- test begin -->
-	<dependency>
-		<groupId>junit</groupId>
-		<artifactId>junit</artifactId>
-		<version>4.10</version>
-		<scope>provided</scope>
-	</dependency>
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>2.4</version>
+		</dependency>
 
-	<dependency>
-		<groupId>org.springframework</groupId>
-		<artifactId>spring-test</artifactId>
-		<version>${org.springframework.version}</version>
-		<scope>provided</scope>
-	</dependency>
-	
-	<!-- 	jetty -->
-	<dependency>
-		<groupId>org.eclipse.jetty.aggregate</groupId>
-		<artifactId>jetty-webapp</artifactId>
-		<version>7.6.1.v20120215</version>
-		<scope>provided</scope>
-	</dependency>
-	
-	<!-- 	webdriver (selenium2)  -->
-	<dependency>
-		<groupId>org.seleniumhq.selenium</groupId>
-		<artifactId>selenium-java</artifactId>
-		<version>2.28.0</version>
-		<scope>provided</scope>
-		<exclusions>
-			<exclusion>
-				<artifactId>selenium-android-driver</artifactId>
-				<groupId>org.seleniumhq.selenium</groupId>
-			</exclusion>
-			<exclusion>
-				<artifactId>selenium-chrome-driver</artifactId>
-				<groupId>org.seleniumhq.selenium</groupId>
-			</exclusion>
-			<exclusion>
-				<artifactId>selenium-ie-driver</artifactId>
-				<groupId>org.seleniumhq.selenium</groupId>
-			</exclusion>
-			<exclusion>
-				<artifactId>selenium-iphone-driver</artifactId>
-				<groupId>org.seleniumhq.selenium</groupId>
-			</exclusion>
-			<exclusion>
-				<artifactId>selenium-safari-driver</artifactId>
-				<groupId>org.seleniumhq.selenium</groupId>
-			</exclusion>
-		</exclusions>
-	</dependency>
-	<!-- test end -->
-	
-	<!-- jackson json处理包 -->
-	<dependency>
-		<groupId>org.codehaus.jackson</groupId>
-		<artifactId>jackson-core-lgpl</artifactId>
-		<version>1.9.12</version>
-	</dependency>            
-	
-	<dependency>
-		<groupId>org.codehaus.jackson</groupId>
-		<artifactId>jackson-mapper-lgpl</artifactId>
-		<version>1.9.12</version>
-	</dependency>
-            
-	
-	<dependency>
-		<groupId>org.codehaus.jackson</groupId>
-		<artifactId>jackson-core-asl</artifactId>
-		<version>1.9.12</version>
-	</dependency>
-            	
-	<dependency>
-		<groupId>org.codehaus.jackson</groupId>
-		<artifactId>jackson-mapper-asl</artifactId>
-		<version>1.9.12</version>
-	</dependency>
-	<!-- json lib -->
-	<dependency>
-	  <groupId>net.sf.json-lib</groupId>
-	  <artifactId>json-lib</artifactId>
-	  <version>2.2.3</version>
-	  <classifier>jdk15</classifier>
-	</dependency>
-	<dependency>
-		<groupId>com.alibaba</groupId>
-		<artifactId>fastjson</artifactId>
-		<version>1.1.37</version>
-	</dependency>
-	<!-- 本地定时调度组件 -->
-	<dependency>  
-     <groupId>org.quartz-scheduler</groupId>  
-     <artifactId>quartz</artifactId>  
-     <version>1.8.6</version>  
-    </dependency>  
-    
-	
-	 <dependency>
-	  <groupId>commons-httpclient</groupId>
-	  <artifactId>commons-httpclient</artifactId>
-	  <version>3.1</version>
-	</dependency>
-	
-   </dependencies>
+
+
+		<!--Jsp lib -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jsp-api</artifactId>
+			<version>2.0</version>
+			<scope>provided</scope>
+		</dependency>
+
+
+
+		<!-- spring -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-beans</artifactId>
+			<version>${org.springframework.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>cglib</groupId>
+			<artifactId>cglib-nodep</artifactId>
+			<version>3.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jdbc</artifactId>
+			<version>${org.springframework.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-web</artifactId>
+			<version>${org.springframework.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>${org.springframework.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-orm</artifactId>
+			<version>${org.springframework.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-tx</artifactId>
+			<version>${org.springframework.version}</version>
+		</dependency>
+
+		<!-- aspectj -->
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjweaver</artifactId>
+			<version>1.7.2</version>
+		</dependency>
+
+		<!-- mybatis -->
+		<!-- 自动生成mapper -->
+		<dependency>
+			<groupId>org.mybatis.generator</groupId>
+			<artifactId>mybatis-generator-core</artifactId>
+			<version>1.3.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.mybatis</groupId>
+			<artifactId>mybatis</artifactId>
+			<version>${mybatis.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>commons-fileupload</groupId>
+			<artifactId>commons-fileupload</artifactId>
+			<version>1.3</version>
+		</dependency>
+
+		<!-- mybatis-spring -->
+		<dependency>
+			<groupId>org.mybatis</groupId>
+			<artifactId>mybatis-spring</artifactId>
+			<version>1.2.0</version>
+		</dependency>
+
+
+		<!-- slf4j ,log4j -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>1.6.4</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>1.6.4</version>
+		</dependency>
+
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.16</version>
+		</dependency>
+
+		<!-- hibernate validator -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-validator</artifactId>
+			<version>5.0.0.Alpha1</version>
+		</dependency>
+
+		<!-- velocity -->
+		<dependency>
+			<groupId>org.apache.velocity</groupId>
+			<artifactId>velocity</artifactId>
+			<version>${velocity.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.velocity</groupId>
+			<artifactId>velocity-tools</artifactId>
+			<version>${velocity.tools.version}</version>
+		</dependency>
+
+		<!-- test begin -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.10</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+			<version>${org.springframework.version}</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- jetty -->
+		<dependency>
+			<groupId>org.eclipse.jetty.aggregate</groupId>
+			<artifactId>jetty-webapp</artifactId>
+			<version>7.6.1.v20120215</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- webdriver (selenium2) -->
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-java</artifactId>
+			<version>2.28.0</version>
+			<scope>provided</scope>
+			<exclusions>
+				<exclusion>
+					<artifactId>selenium-android-driver</artifactId>
+					<groupId>org.seleniumhq.selenium</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>selenium-chrome-driver</artifactId>
+					<groupId>org.seleniumhq.selenium</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>selenium-ie-driver</artifactId>
+					<groupId>org.seleniumhq.selenium</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>selenium-iphone-driver</artifactId>
+					<groupId>org.seleniumhq.selenium</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>selenium-safari-driver</artifactId>
+					<groupId>org.seleniumhq.selenium</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<!-- test end -->
+
+		<!-- jackson json处理包 -->
+		<dependency>
+			<groupId>org.codehaus.jackson</groupId>
+			<artifactId>jackson-core-lgpl</artifactId>
+			<version>1.9.12</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.codehaus.jackson</groupId>
+			<artifactId>jackson-mapper-lgpl</artifactId>
+			<version>1.9.12</version>
+		</dependency>
+
+
+		<dependency>
+			<groupId>org.codehaus.jackson</groupId>
+			<artifactId>jackson-core-asl</artifactId>
+			<version>1.9.12</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.codehaus.jackson</groupId>
+			<artifactId>jackson-mapper-asl</artifactId>
+			<version>1.9.12</version>
+		</dependency>
+		<!-- json lib -->
+		<dependency>
+			<groupId>net.sf.json-lib</groupId>
+			<artifactId>json-lib</artifactId>
+			<version>2.2.3</version>
+			<classifier>jdk15</classifier>
+		</dependency>
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>fastjson</artifactId>
+			<version>1.1.37</version>
+		</dependency>
+		<!-- 本地定时调度组件 -->
+		<dependency>
+			<groupId>org.quartz-scheduler</groupId>
+			<artifactId>quartz</artifactId>
+			<version>1.8.6</version>
+		</dependency>
+
+
+		<dependency>
+			<groupId>commons-httpclient</groupId>
+			<artifactId>commons-httpclient</artifactId>
+			<version>3.1</version>
+		</dependency>
+
+	</dependencies>
 
 	<!-- 插件配置 -->
 	<build>
@@ -344,43 +344,43 @@
 						<showWarnings>true</showWarnings>
 					</configuration>
 				</plugin>
-				
-				<!-- resource插件 -->	
+
+				<!-- resource插件 -->
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-resources-plugin</artifactId>
 					<version>2.5</version>
 					<executions>
-					<execution>
-						<id>copy-xmls</id>
-						<phase>process-sources</phase>
-						<goals>
-							<goal>copy-resources</goal>
-						</goals>
-						<configuration>
-							<outputDirectory>${project.basedir}/src/main/webapp/WEB-INF/classes/com/web/maven/dao/mapper</outputDirectory>
-							<resources>
-								<resource>
-									<directory>${basedir}/src/main/java/com/web/maven/dao/mapper</directory>
-									<includes>
-										<include>*.xml</include>
-									</includes>
-								</resource>  
-							</resources>  
-							
-						</configuration>
-					</execution>
-		</executions>
+						<execution>
+							<id>copy-xmls</id>
+							<phase>process-sources</phase>
+							<goals>
+								<goal>copy-resources</goal>
+							</goals>
+							<configuration>
+								<outputDirectory>${project.basedir}/src/main/webapp/WEB-INF/classes/com/web/maven/dao/mapper</outputDirectory>
+								<resources>
+									<resource>
+										<directory>${basedir}/src/main/java/com/web/maven/dao/mapper</directory>
+										<includes>
+											<include>*.xml</include>
+										</includes>
+									</resource>
+								</resources>
+
+							</configuration>
+						</execution>
+					</executions>
 				</plugin>
-				
+
 				<plugin>
-        			<groupId>org.apache.maven.plugins</groupId>
-        			<artifactId>maven-surefire-plugin</artifactId>
-        			<configuration>
-          				<skip>true</skip>
-        			</configuration>
-      			</plugin>
-      
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-surefire-plugin</artifactId>
+					<configuration>
+						<skip>true</skip>
+					</configuration>
+				</plugin>
+
 				<!-- 打war包相关插件 -->
 				<plugin>
 					<artifactId>maven-war-plugin</artifactId>
@@ -391,7 +391,7 @@
 						<warName>mavenweb</warName>
 					</configuration>
 				</plugin>
-			
+
 				<!-- jar打包相关插件 -->
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
@@ -405,43 +405,43 @@
 						</archive>
 					</configuration>
 				</plugin>
-				
-				
+
+
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-source-plugin</artifactId>
 					<version>2.1.2</version>
 				</plugin>
-				
-				
+
+
 				<!-- clean插件 -->
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-clean-plugin</artifactId>
 					<version>2.4.1</version>
 					<configuration>
-				      <filesets>
-				        <fileset>
-				         <!-- 执行 clean命令时 删除WEB-INF/lib下面的所有jar包  -->
-				          <directory>${project.basedir}/src/main/webapp/WEB-INF/lib</directory>
-				          <includes>
-				            <include>**/*.jar</include>
-				          </includes>
-				        </fileset>
-				      </filesets>
-			      </configuration>
+						<filesets>
+							<fileset>
+								<!-- 执行 clean命令时 删除WEB-INF/lib下面的所有jar包 -->
+								<directory>${project.basedir}/src/main/webapp/WEB-INF/lib</directory>
+								<includes>
+									<include>**/*.jar</include>
+								</includes>
+							</fileset>
+						</filesets>
+					</configuration>
 				</plugin>
-				
-				
+
+
 				<!-- install插件 -->
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-install-plugin</artifactId>
 					<version>2.3.1</version>
 				</plugin>
-				
-				
-				
+
+
+
 				<!-- eclipse插件,设定下载Source -->
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
@@ -453,8 +453,8 @@
 					</configuration>
 				</plugin>
 
-				
-				
+
+
 				<!-- dependency相关插件 -->
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
@@ -472,151 +472,152 @@
 					<groupId>org.codehaus.mojo</groupId>
 					<artifactId>tomcat-maven-plugin</artifactId>
 					<version>1.1</version>
-					
-					<executions>  
-        				<execution>  
-           					<id>tomcat-deploy</id>  
-            				<phase>deploy</phase>  
-            			<goals>  
-                			<goal>deploy</goal>  
-            			</goals>  
-        			</execution>  
-    				</executions>  
-    				
-    				<configuration>  
-        				<!--<path>/</path>-->  
-        				<port>80</port>  
-       					
-       					<!--	<warSourceDirectory>webapp</warSourceDirectory>  -->
-<!--	       					<tomcatWebXml>webapp/WEB-INF/web.xml</tomcatWebXml>  -->
-					</configuration>  
+
+					<executions>
+						<execution>
+							<id>tomcat-deploy</id>
+							<phase>deploy</phase>
+							<goals>
+								<goal>deploy</goal>
+							</goals>
+						</execution>
+					</executions>
+
+					<configuration>
+						<!--<path>/</path> -->
+						<port>80</port>
+
+						<!-- <warSourceDirectory>webapp</warSourceDirectory> -->
+						<!-- <tomcatWebXml>webapp/WEB-INF/web.xml</tomcatWebXml> -->
+					</configuration>
 				</plugin>
 
-				<!-- 1.tomcat_home/conf/tomcat-users.xml中需包含一个用户 : <user username="admin" password="admin" roles="manager"/> -->
-				<!-- 2.启动tomcat（单独启动或在eclipse中启动均可）-->
+				<!-- 1.tomcat_home/conf/tomcat-users.xml中需包含一个用户 : <user username="admin" 
+					password="admin" roles="manager"/> -->
+				<!-- 2.启动tomcat（单独启动或在eclipse中启动均可） -->
 				<!-- 3.在maven的settings.xml的pluginGroups下增加<pluginGroup>org.codehaus.cargo</pluginGroup> -->
 				<!-- 4.向外部tomcat发布war包 clean package cargo:redeploy -->
 				<!-- 5.cargo在线文档：http://cargo.codehaus.org/Maven2+plugin -->
 				<plugin>
-			        <groupId>org.codehaus.cargo</groupId>
-			        <artifactId>cargo-maven2-plugin</artifactId>
-			        <configuration>
-			            <container>
-			                <containerId>tomcat6x</containerId>
-			                <type>remote</type>
-			            </container>
-				        <configuration>
-					        <type>runtime</type>
-					        <properties>
-					            <cargo.tomcat.manager.url>
-					                http://localhost/manager
-					            </cargo.tomcat.manager.url>
+					<groupId>org.codehaus.cargo</groupId>
+					<artifactId>cargo-maven2-plugin</artifactId>
+					<configuration>
+						<container>
+							<containerId>tomcat6x</containerId>
+							<type>remote</type>
+						</container>
+						<configuration>
+							<type>runtime</type>
+							<properties>
+								<cargo.tomcat.manager.url>
+									http://localhost/manager
+								</cargo.tomcat.manager.url>
 								<!-- 这是第一步添加的用户 -->
-					            <cargo.remote.username>admin</cargo.remote.username>
-					            <cargo.remote.password>admin</cargo.remote.password>
-					        </properties>
-			        	</configuration>
-			            <deployer>
-			                <type>remote</type>
-			                <deployables>
-			                    <deployable>
-			                        <groupId>com.hc360</groupId>
-			                        <artifactId>mavenweb</artifactId>
-			                        <type>war</type>
-			                    </deployable>
-			                </deployables>
-			            </deployer>
-			        </configuration>
-			    </plugin>
-			    
-			    <!-- 让maven能够识别elipse中的依赖关系 -->
-			     <plugin>  
-		           <groupId>org.eclipse.m2e</groupId>  
-		           <artifactId>lifecycle-mapping</artifactId>  
-		           <version>1.0.0</version>  
-		           <configuration>  
-		               <lifecycleMappingMetadata>  
-		                   <pluginExecutions>  
-		                       <pluginExecution>  
-		                           <pluginExecutionFilter>  
-		                               <groupId>org.apache.maven.plugins</groupId>  
-		                               <artifactId>maven-dependency-plugin</artifactId>  
-		                               <versionRange>[2.0,)</versionRange>  
-		                               <goals>  
-		                                   <goal>copy-dependencies</goal>  
-		                               </goals>  
-		                           </pluginExecutionFilter>  
-		                           <action>  
-		                               <ignore/>  
-		                           </action>  
-		                       </pluginExecution>  
-		                   </pluginExecutions>  
-		               </lifecycleMappingMetadata>  
-		           </configuration>  
-		       </plugin>
+								<cargo.remote.username>admin</cargo.remote.username>
+								<cargo.remote.password>admin</cargo.remote.password>
+							</properties>
+						</configuration>
+						<deployer>
+							<type>remote</type>
+							<deployables>
+								<deployable>
+									<groupId>com.hc360</groupId>
+									<artifactId>mavenweb</artifactId>
+									<type>war</type>
+								</deployable>
+							</deployables>
+						</deployer>
+					</configuration>
+				</plugin>
 
-<!-- mybatis 自动生成代码 -->
-	<plugin>
-		<groupId>org.mybatis.generator</groupId>
-		<artifactId>mybatis-generator-maven-plugin</artifactId>
-		<version>1.3.1</version>
-		<dependencies>
-			<!-- 数据库驱动 -->
-			<dependency>
-				<groupId>mysql</groupId>
-				<artifactId>mysql-connector-java</artifactId>
-				<version>jdbc.driver.version</version>
-			</dependency>
+				<!-- 让maven能够识别elipse中的依赖关系 -->
+				<plugin>
+					<groupId>org.eclipse.m2e</groupId>
+					<artifactId>lifecycle-mapping</artifactId>
+					<version>1.0.0</version>
+					<configuration>
+						<lifecycleMappingMetadata>
+							<pluginExecutions>
+								<pluginExecution>
+									<pluginExecutionFilter>
+										<groupId>org.apache.maven.plugins</groupId>
+										<artifactId>maven-dependency-plugin</artifactId>
+										<versionRange>[2.0,)</versionRange>
+										<goals>
+											<goal>copy-dependencies</goal>
+										</goals>
+									</pluginExecutionFilter>
+									<action>
+										<ignore />
+									</action>
+								</pluginExecution>
+							</pluginExecutions>
+						</lifecycleMappingMetadata>
+					</configuration>
+				</plugin>
 
-		</dependencies>
-		<!-- 自动生成 -->
-		<executions>
-			<execution>
-				<id>Generate MyBatis Artifacts</id>
-				<goals>
-					<goal>generate</goal>
-				</goals>
-				<configuration>
-					<configurationFile>src/main/resources/mybatis/mysqlGeneratorConfig.xml</configurationFile>
-					<overwrite>true</overwrite>
-					<jdbcDriver>com.mysql.jdbc.Driver</jdbcDriver>
-					<jdbcURL>jdbc:mysql://localhost:3306/mavenDb</jdbcURL>
-					<jdbcUserId>root</jdbcUserId>
-					<jdbcPassword>root</jdbcPassword>
-				</configuration>
-			</execution>
-		</executions>
-	</plugin>
-<!-- mybatis 自动生成代码结束 -->
-	
+				<!-- mybatis 自动生成代码 -->
+				<plugin>
+					<groupId>org.mybatis.generator</groupId>
+					<artifactId>mybatis-generator-maven-plugin</artifactId>
+					<version>1.3.1</version>
+					<dependencies>
+						<!-- 数据库驱动 -->
+						<dependency>
+							<groupId>mysql</groupId>
+							<artifactId>mysql-connector-java</artifactId>
+							<version>jdbc.driver.version</version>
+						</dependency>
+
+					</dependencies>
+					<!-- 自动生成 -->
+					<executions>
+						<execution>
+							<id>Generate MyBatis Artifacts</id>
+							<goals>
+								<goal>generate</goal>
+							</goals>
+							<configuration>
+								<configurationFile>src/main/resources/mybatis/mysqlGeneratorConfig.xml</configurationFile>
+								<overwrite>true</overwrite>
+								<jdbcDriver>com.mysql.jdbc.Driver</jdbcDriver>
+								<jdbcURL>jdbc:mysql://localhost:3306/mavenDb</jdbcURL>
+								<jdbcUserId>root</jdbcUserId>
+								<jdbcPassword>root</jdbcPassword>
+							</configuration>
+						</execution>
+					</executions>
+				</plugin>
+				<!-- mybatis 自动生成代码结束 -->
+
 			</plugins>
 		</pluginManagement>
-		
-		<plugins> 
-		    <!-- 每打包时自动同步依赖的jar  -->
-      		<plugin>  
-            <groupId>org.apache.maven.plugins</groupId>  
-            <artifactId>maven-dependency-plugin</artifactId>  
-            <executions>  
-               <execution>  
-                   <id>copy-dependencies</id>  
-                   <phase>package</phase>  
-                   <goals>  
-                       <goal>copy-dependencies</goal>  
-                   </goals>  
-                   <configuration>  
-                       <outputDirectory>${project.basedir}/src/main/webapp/WEB-INF/lib</outputDirectory>
-                       <overWriteIfNewer>true</overWriteIfNewer>
-                       <excludeTransitive>false</excludeTransitive>  
-                       <stripVersion>false</stripVersion> 
-                       <!-- 不会把scope 为test 的依赖copy过去 -->
-						<includeScope>compile</includeScope>
-                   </configuration>  
-               </execution>  
-           </executions>  
-          
-           </plugin>  
-    </plugins>
+
+		<plugins>
+			<!-- 每打包时自动同步依赖的jar -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-dependency-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>copy-dependencies</id>
+						<phase>package</phase>
+						<goals>
+							<goal>copy-dependencies</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>${project.basedir}/src/main/webapp/WEB-INF/lib</outputDirectory>
+							<overWriteIfNewer>true</overWriteIfNewer>
+							<excludeTransitive>false</excludeTransitive>
+							<stripVersion>false</stripVersion>
+							<!-- 不会把scope 为test 的依赖copy过去 -->
+							<includeScope>compile</includeScope>
+						</configuration>
+					</execution>
+				</executions>
+
+			</plugin>
+		</plugins>
 	</build>
-	
+
 </project>
